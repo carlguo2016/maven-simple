@@ -20,7 +20,7 @@ and the dependency:
 
 ```xml
 	<dependency>
-		<groupId>com.github.jitpack</groupId>
+		<groupId>com.github.carlguo2016</groupId>
 		<artifactId>maven-simple</artifactId>
 		<version>0.1</version>
 	</dependency>
