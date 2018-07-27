@@ -2,6 +2,8 @@
 
 Example Maven project generated using `maven-archetype-quickstart`
 
+mvn install -DskipTests
+然后提交到git
 [https://jitpack.io/#jitpack/maven-simple](https://jitpack.io/#jitpack/maven-simple)
 
 [![Release](https://jitpack.io/v/jitpack/maven-simple.svg)](https://jitpack.io/#jitpack/maven-simple)
