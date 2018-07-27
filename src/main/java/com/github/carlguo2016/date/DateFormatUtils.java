@@ -1,4 +1,4 @@
-package com.github.jitpack.date;
+package com.github.carlguo2016.date;
 
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
@@ -11,45 +11,41 @@ import java.util.Date;
 public class DateFormatUtils {
 	/** yyyy:年 */
 	public static final String DATE_YEAR = "yyyy";
-	
+
 	/** MM：月 */
 	public static final String DATE_MONTH = "MM";
-	
+
 	/** DD：日 */
 	public static final String DATE_DAY = "dd";
-	
+
 	/** HH：时 */
 	public static final String DATE_HOUR = "HH";
-	
+
 	/** mm：分 */
 	public static final String DATE_MINUTE = "mm";
-	
+
 	/** ss：秒 */
 	public static final String DATE_SECONDES = "ss";
-	
+
 	/** yyyy-MM-dd */
 	public static final String DATE_FORMAT1 = "yyyy-MM-dd";
-		
+
 	/** yyyy-MM-dd hh:mm:ss */
 	public static final String DATE_FORMAT2 = "yyyy-MM-dd HH:mm:ss";
 
 	/** yyyy-MM-dd hh:mm:ss|SSS */
 	public static final String TIME_FORMAT_SSS = "yyyy-MM-dd HH:mm:ss|SSS";
-	
+
 	/** yyyyMMdd */
 	public static final String DATE_NOFUll_FORMAT = "yyyyMMdd";
-	
+
 	/** yyyyMMddhhmmss */
 	public static final String TIME_NOFUll_FORMAT = "yyyyMMddHHmmss";
-	
+
 	/**
-	 * 
-	 * 格式转换<br>
-	 * yyyy-MM-dd hh:mm:ss 和 yyyyMMddhhmmss 相互转换<br>
-	 * yyyy-mm-dd 和yyyymmss 相互转换
-	 * @param value 
-	 * 				日期
-	 * @return String
+	 * formatString
+	 * @param value
+	 * @return
 	 */
 	public static String formatString(String value) {
 		String sReturn = "";
@@ -73,7 +69,7 @@ public class DateFormatUtils {
 		}
 		return sReturn;
 	}
-	
+
 	public static String formatDate(String date, String format) {
 		if (date == null || "".equals(date)){
 			return "";
@@ -124,47 +120,12 @@ public class DateFormatUtils {
 			}
 			return outFmt.format(dt);
 		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
 		}
 		return date;
 	}
 
-	/**
-	 * 格式化日期
-	 * 
-	 * @param date
-	 * @param format
-	 * @return
-	 */
-	public static String formatDate(Date date,String format){
-		return formatDate(DateUtils.date2String(date), format);
-	}
-	
-	/**
-	 * @desc:格式化是时间，采用默认格式（yyyy-MM-dd HH:mm:ss）
-	 *
-	 * @param value
-	 * @return
-	 */
-	public static String formatDate(String value){
-		return getFormat(DATE_FORMAT2).format(DateUtils.string2Date(value, DATE_FORMAT2));
-	}
-	
-	/**
-	 * 格式化日期
-	 *
-	 * @param value
-	 * @return
-	 */
-	public static String formatDate(Date value){
-		return formatDate(DateUtils.date2String(value));
-	}
-	
-	/**
-	 * 获取日期显示格式，为空默认为yyyy-mm-dd HH:mm:ss
-	 * @param format
-	 * @return
-	 * @return SimpleDateFormat
-	 */
+
 	protected static SimpleDateFormat getFormat(String format){
 		if(format == null || "".equals(format)){
 			format = DATE_FORMAT2;
